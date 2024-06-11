@@ -1,0 +1,14 @@
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        """
+        :type candies: List[int]
+        :type extraCandies: int
+        :rtype: List[bool]
+        """
+        maxCandies = max(candies)
+        # Initialize result list to store whether each kid can have the greatest number of candies
+        result = []
+        # Iterate over the candies list to determine if each kid can have the greatest number after adding extraCandies
+        for i in range(len(candies)):
+            result.append(candies[i] + extraCandies >= maxCandies)
+        return result
